@@ -16,8 +16,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(entityManagerFactoryRef = "secondaryEntityManagerFactory", transactionManagerRef = "secondaryTransactionManager", basePackages = {
-		"com.yawintutor.secondary" })
+@EnableJpaRepositories(
+	entityManagerFactoryRef = "secondaryEntityManagerFactory", 
+	transactionManagerRef = "secondaryTransactionManager", 
+	basePackages = {"com.yawintutor.secondary" })
 public class SecondaryDBConfig {
 	@Bean(name = "secondaryDataSource")
 	@ConfigurationProperties(prefix = "spring.seconddatasource")

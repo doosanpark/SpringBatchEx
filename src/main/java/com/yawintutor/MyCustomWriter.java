@@ -18,6 +18,7 @@ public class MyCustomWriter implements ItemWriter<Manager> {
 	@Override
 	public void write(List<? extends Manager> list) throws Exception {
 		for (Manager data : list) {
+			data.setId(data.getId() + 1);
 			System.out.println("MyCustomWriter    : Writing data    : " + data.getId()+" : "+data.getName()+" : "+data.getSalary());
 			managerRepository.save(data);
 		}
